@@ -32,6 +32,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B1B823C2ABCBE00005EF033 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4B8CD7172ABBDDB50046C967 /* InstagramCloneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4B1B823D2ABCBE0E005EF033 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4B1B82472ABCBE65005EF033 /* Authentication */,
+				4B1B82462ABCBE5F005EF033 /* Feed */,
+				4B1B82452ABCBE50005EF033 /* Profile */,
+				4B1B82442ABCBE4B005EF033 /* Root */,
+				4B1B82432ABCBE44005EF033 /* Search */,
+				4B1B82422ABCBE3E005EF033 /* TabBar */,
+				4B1B82412ABCBE35005EF033 /* UploadPost */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4B1B823E2ABCBE16005EF033 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B1B823F2ABCBE21005EF033 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B1B82402ABCBE29005EF033 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4B1B82412ABCBE35005EF033 /* UploadPost */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UploadPost;
+			sourceTree = "<group>";
+		};
+		4B1B82422ABCBE3E005EF033 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		4B1B82432ABCBE44005EF033 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4B1B82442ABCBE4B005EF033 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		4B1B82452ABCBE50005EF033 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4B1B82462ABCBE5F005EF033 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		4B1B82472ABCBE65005EF033 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		4B8CD70B2ABBDDB50046C967 = {
 			isa = PBXGroup;
 			children = (
@@ -51,7 +143,11 @@
 		4B8CD7162ABBDDB50046C967 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
-				4B8CD7172ABBDDB50046C967 /* InstagramCloneApp.swift */,
+				4B1B823C2ABCBE00005EF033 /* App */,
+				4B1B823D2ABCBE0E005EF033 /* Core */,
+				4B1B823E2ABCBE16005EF033 /* Extensions */,
+				4B1B823F2ABCBE21005EF033 /* Model */,
+				4B1B82402ABCBE29005EF033 /* Services */,
 				4B8CD7192ABBDDB50046C967 /* ContentView.swift */,
 				4B8CD71B2ABBDDB70046C967 /* Assets.xcassets */,
 				4B8CD71D2ABBDDB70046C967 /* Preview Content */,
