@@ -12,11 +12,7 @@ struct FeedCell: View {
         VStack(spacing: 10) {
             /// image + username
             HStack(spacing: 4) {
-                Image("bren")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
+                UserImage()
                 
                 Text("bren")
                     .font(.footnote)
