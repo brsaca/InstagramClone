@@ -33,7 +33,7 @@ struct MainTabView: View {
                 }
             
             
-            Text("Profile")
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                 }
