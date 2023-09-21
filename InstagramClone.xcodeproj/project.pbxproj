@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1B82492ABCBE9D005EF033 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B82482ABCBE9D005EF033 /* MainTabView.swift */; };
 		4B8CD7182ABBDDB50046C967 /* InstagramCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CD7172ABBDDB50046C967 /* InstagramCloneApp.swift */; };
 		4B8CD71A2ABBDDB50046C967 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CD7192ABBDDB50046C967 /* ContentView.swift */; };
 		4B8CD71C2ABBDDB70046C967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CD71B2ABBDDB70046C967 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B1B82482ABCBE9D005EF033 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4B8CD7142ABBDDB50046C967 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8CD7172ABBDDB50046C967 /* InstagramCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneApp.swift; sourceTree = "<group>"; };
 		4B8CD7192ABBDDB50046C967 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		4B1B82422ABCBE3E005EF033 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				4B1B82482ABCBE9D005EF033 /* MainTabView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			files = (
 				4B8CD71A2ABBDDB50046C967 /* ContentView.swift in Sources */,
 				4B8CD7182ABBDDB50046C967 /* InstagramCloneApp.swift in Sources */,
+				4B1B82492ABCBE9D005EF033 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
