@@ -11,6 +11,10 @@ struct ProfileView: View {
     /// Properties
     let user: User
     
+    var posts: [Post] {
+        return Post.MOCK_POSTS.filter({$0.user?.username == user.username})
+    }
+    
     var body: some View {
             ScrollView {
                 /// header
@@ -71,7 +75,7 @@ struct ProfileView: View {
                     Divider()
                     
                     /// posts grid view
-                    PostGridView(user: user)
+                    PostGridView(posts: posts)
                 }
             }
     }

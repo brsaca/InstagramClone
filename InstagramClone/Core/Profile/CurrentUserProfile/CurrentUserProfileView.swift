@@ -13,6 +13,10 @@ struct CurrentUserProfileView: View {
         return User.MOCK_USERS[0]
     }
     
+    var posts: [Post] {
+        return Post.MOCK_POSTS.filter({$0.user?.username == currentUser?.username})
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -70,9 +74,8 @@ struct CurrentUserProfileView: View {
                     Divider()
                     
                     /// posts grid view
-                    if let user = currentUser {
-                        PostGridView(user: user)
-                    }
+                    PostGridView(posts: posts)
+                    
                 }
             }
             .navigationTitle("Profile")

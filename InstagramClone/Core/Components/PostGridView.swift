@@ -17,11 +17,7 @@ struct PostGridView: View {
     
     private let dimension: CGFloat = UIScreen.main.bounds.width / 3 - 1
     
-    let user: User
-    
-    var posts: [Post] {
-        return Post.MOCK_POSTS.filter({$0.user?.username == user.username})
-    }
+    let posts: [Post]
     
     var body: some View {
         /// posts grid view
@@ -39,6 +35,6 @@ struct PostGridView: View {
 
 struct PostGridView_Previews: PreviewProvider {
     static var previews: some View {
-        PostGridView(user: User.MOCK_USERS[0])
+        PostGridView(posts: Post.MOCK_POSTS)
     }
 }
