@@ -1,5 +1,5 @@
 //
-//  Add EmailView.swift
+//  AddEmailView.swift
 //  InstagramClone
 //
 //  Created by Brenda Saavedra Cantu on 25/09/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Add_EmailView: View {
+struct AddEmailView: View {
     /// Properties
     @State private var email: String = String()
     @Environment(\.dismiss) var dismiss
@@ -28,8 +28,9 @@ struct Add_EmailView: View {
                 .modifier(IGTextFieldModifier())
                 .padding(.vertical, 20)
             
-            Button {
-                
+            NavigationLink {
+                CreateUsernameView()
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
                     .font(.footnote)
@@ -57,7 +58,7 @@ struct Add_EmailView: View {
 struct Add_EmailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            Add_EmailView()
+            AddEmailView()
         }
     }
 }
