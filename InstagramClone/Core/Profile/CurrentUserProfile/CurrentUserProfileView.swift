@@ -9,11 +9,9 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     /// Properties
-    private let gridItems: [GridItem] = [
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1)
-    ]
+    private var currentUser: User? {
+        return User.MOCK_USERS[0]
+    }
     
     var body: some View {
         NavigationStack {
@@ -22,7 +20,7 @@ struct CurrentUserProfileView: View {
                 VStack (spacing: 10) {
                     /// pic and stats
                     HStack {
-                        Image("bren")
+                        Image(currentUser?.profileImageUrl ?? "")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 80, height: 80)
@@ -42,10 +40,10 @@ struct CurrentUserProfileView: View {
                     
                     /// name and bio
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("fullName")
+                        Text(currentUser?.fullname ?? "")
                             .fontWeight(.semibold)
                         
-                        Text("bio")
+                        Text(currentUser?.bio ?? "")
                     }
                     .font(.footnote)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -72,12 +70,8 @@ struct CurrentUserProfileView: View {
                     Divider()
                     
                     /// posts grid view
-                    LazyVGrid(columns: gridItems, spacing: 1) {
-                        ForEach(0 ... 15, id:\.self) { index in
-                            Image("bren")
-                                .resizable()
-                                .scaledToFill()
-                        }
+                    if let user = currentUser {
+                        PostGridView(user: user)
                     }
                 }
             }
