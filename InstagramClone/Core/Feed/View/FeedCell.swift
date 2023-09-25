@@ -9,15 +9,15 @@ import SwiftUI
 
 struct FeedCell: View {
     /// Properties
-    let user: User
+    let post: Post
     
     var body: some View {
         VStack(spacing: 10) {
             /// image + username
             HStack(spacing: 4) {
-                UserImage(user: user)
+                UserImage(user: post.user)
                 
-                Text(user.username)
+                Text(post.user?.username ?? "")
                     .font(.footnote)
                     .fontWeight(.semibold)
                 
@@ -26,7 +26,7 @@ struct FeedCell: View {
             .padding(.leading)
             
             /// post image
-            Image(user.username)
+            Image(post.imageUrl)
                 .resizable()
                 .scaledToFill()
                 .frame(height: 400)
@@ -62,7 +62,7 @@ struct FeedCell: View {
             }.padding(.leading)
             
             /// likes label
-            Text("0 likes")
+            Text("\(post.likes) likes")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -71,9 +71,9 @@ struct FeedCell: View {
             
             /// caption label
             HStack{
-                Text("morra")
+                Text(post.user?.username ?? "")
                     .fontWeight(.semibold) +
-                Text("This is a test of caption of the image")
+                Text(post.caption ?? "")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.footnote)
@@ -93,6 +93,6 @@ struct FeedCell: View {
 
 struct FeedCell_Previews: PreviewProvider {
     static var previews: some View {
-        FeedCell(user: User.MOCK_USERS[0])
+        FeedCell(post: Post.MOCK_POSTS[0])
     }
 }

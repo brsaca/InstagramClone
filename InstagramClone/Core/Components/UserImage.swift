@@ -9,10 +9,10 @@ import SwiftUI
 
 struct UserImage: View {
     /// Properties
-    let user: User
+    let user: User?
     
     var body: some View {
-        if let image = user.profileImageUrl {
+        if let image = user?.profileImageUrl {
             Image(image)
                 .resizable()
                 .scaledToFill()
