@@ -48,12 +48,7 @@ struct LoginView: View {
                     
                 } label: {
                     Text("Log in")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .frame(width: 360, height: 44)
-                        .background(Color(.systemBlue))
-                        .cornerRadius(8)
+                        .modifier(IGTextButtonModifier())
                 }
                 .padding(.vertical)
                 

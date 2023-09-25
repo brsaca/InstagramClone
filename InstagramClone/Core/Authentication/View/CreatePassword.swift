@@ -31,16 +31,12 @@ struct CreatePassword: View {
                 .modifier(IGTextFieldModifier())
                 .padding(.vertical, 20)
             
-            Button {
-                
+            NavigationLink {
+                CompleteSignUpView()
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .frame(width: 360, height: 44)
-                    .background(Color(.systemBlue))
-                    .cornerRadius(8)
+                    .modifier(IGTextButtonModifier())
             }
             
             Spacer()

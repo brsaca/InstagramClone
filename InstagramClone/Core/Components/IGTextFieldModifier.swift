@@ -16,6 +16,4 @@ struct IGTextFieldModifier: ViewModifier {
             .cornerRadius(10)
             .padding(.horizontal, 24)
     }
-    
-    
 }

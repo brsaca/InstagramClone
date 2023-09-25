@@ -34,12 +34,7 @@ struct CreateUsernameView: View {
                     .navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .frame(width: 360, height: 44)
-                    .background(Color(.systemBlue))
-                    .cornerRadius(8)
+                    .modifier(IGTextButtonModifier())
             }
             
             Spacer()
