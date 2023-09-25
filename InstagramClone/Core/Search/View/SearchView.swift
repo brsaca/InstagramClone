@@ -16,25 +16,31 @@ struct SearchView: View {
             ScrollView {
                 LazyVStack(alignment: .leading){
                     ForEach(User.MOCK_USERS) { user in
-                        HStack {
-                            UserImage(user: user)
-                            
-                            VStack(alignment: .leading){
-                                Text(user.username)
-                                    .fontWeight(.semibold)
+                        NavigationLink(value: user) {
+                            HStack {
+                                UserImage(user: user)
                                 
-                                if let fullname = user.fullname {
-                                    Text(fullname)
+                                VStack(alignment: .leading){
+                                    Text(user.username)
+                                        .fontWeight(.semibold)
+                                    
+                                    if let fullname = user.fullname {
+                                        Text(fullname)
+                                    }
                                 }
+                                .font(.footnote)
                             }
-                            .font(.footnote)
                         }
+                        .accentColor(.black)
                     }
                     .padding(.horizontal)
                 }
                 .padding(.top, 8)
                 .searchable(text: $searchText, prompt: "Search...")
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView(user: user)
+            })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }

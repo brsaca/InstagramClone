@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     /// Properties
+    let user: User
+    
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1),
@@ -16,13 +18,12 @@ struct ProfileView: View {
     ]
     
     var body: some View {
-        NavigationStack {
             ScrollView {
                 /// header
                 VStack (spacing: 10) {
                     /// pic and stats
                     HStack {
-                        Image("bren")
+                        Image(user.profileImageUrl ?? "bren")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 80, height: 80)
@@ -42,10 +43,14 @@ struct ProfileView: View {
                     
                     /// name and bio
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Brenda SC")
-                            .fontWeight(.semibold)
+                        if let fullName = user.fullname {
+                            Text(fullName)
+                                .fontWeight(.semibold)
+                        }
                         
-                        Text("iOS Developer")
+                        if let bio = user.bio {
+                            Text(bio)
+                        }
                     }
                     .font(.footnote)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -81,20 +86,6 @@ struct ProfileView: View {
                     }
                 }
             }
-            .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "line.3.horizontal")
-                            .foregroundColor(.black)
-                    }
-
-                }
-            }
-        }
     }
     
 }
@@ -102,7 +93,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ProfileView()
+            ProfileView(user: User.MOCK_USERS[1])
         }
     }
 }
