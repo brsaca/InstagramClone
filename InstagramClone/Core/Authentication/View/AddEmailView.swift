@@ -55,7 +55,7 @@ struct AddEmailView: View {
     }
 }
 
-struct Add_EmailView_Previews: PreviewProvider {
+struct AddEmailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             AddEmailView()
