@@ -13,7 +13,7 @@ struct Add_EmailView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        VStack (alignment: .center, spacing: 10) {
+        VStack (spacing: 10) {
             Text("Add your email")
                 .font(.title2)
                 .fontWeight(.bold)
@@ -25,12 +25,8 @@ struct Add_EmailView: View {
             
             TextField("Email", text: $email)
                 .autocapitalization(.none)
-                .font(.subheadline)
-                .padding(12)
-                .background(Color(.systemGray6))
-                .cornerRadius(10)
-                .padding(.horizontal, 24)
-                .padding(.vertical, 24)
+                .modifier(IGTextFieldModifier())
+                .padding(.vertical, 20)
             
             Button {
                 
