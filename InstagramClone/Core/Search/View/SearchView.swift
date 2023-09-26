@@ -9,13 +9,13 @@ import SwiftUI
 
 struct SearchView: View {
     /// Properties
-    @State private var searchText = ""
+    @StateObject private var viewModel = SearchViewModel()
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading){
-                    ForEach(User.MOCK_USERS) { user in
+                    ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             HStack {
                                 UserImage(user: user, size: ProfileImageSize.small)
@@ -36,7 +36,7 @@ struct SearchView: View {
                     .padding(.horizontal)
                 }
                 .padding(.top, 8)
-                .searchable(text: $searchText, prompt: "Search...")
+                .searchable(text: $viewModel.searchText, prompt: "Search...")
             }
             .navigationDestination(for: User.self, destination: { user in
                 ProfileView(user: user)

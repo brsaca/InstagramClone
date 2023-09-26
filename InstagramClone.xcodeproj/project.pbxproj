@@ -17,6 +17,7 @@
 		4B612B6A2AC337150000CFAA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B612B692AC337150000CFAA /* LoginViewModel.swift */; };
 		4B6513342AC35DBE0003A314 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6513332AC35DBE0003A314 /* UserService.swift */; };
 		4B6513382AC35F210003A314 /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6513372AC35F210003A314 /* CurrentUserProfileViewModel.swift */; };
+		4B65133B2AC368490003A314 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B65133A2AC368490003A314 /* SearchViewModel.swift */; };
 		4B73258D2AC32C8200F82D5B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B73258C2AC32C8200F82D5B /* RegistrationViewModel.swift */; };
 		4B74137B2AC1E749002333CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74137A2AC1E749002333CA /* LoginView.swift */; };
 		4B74137D2AC1F384002333CA /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74137C2AC1F384002333CA /* AddEmailView.swift */; };
@@ -57,6 +58,7 @@
 		4B612B692AC337150000CFAA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4B6513332AC35DBE0003A314 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4B6513372AC35F210003A314 /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
+		4B65133A2AC368490003A314 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		4B73258C2AC32C8200F82D5B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		4B74137A2AC1E749002333CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4B74137C2AC1F384002333CA /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4B1B82562ABCD29A005EF033 /* View */,
+				4B6513392AC368360003A314 /* ViewModel */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -255,6 +258,14 @@
 			isa = PBXGroup;
 			children = (
 				4B6513372AC35F210003A314 /* CurrentUserProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B6513392AC368360003A314 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B65133A2AC368490003A314 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -465,6 +476,7 @@
 				4B1B824D2ABCBFED005EF033 /* ProfileView.swift in Sources */,
 				4B74139D2AC21E62002333CA /* UploadPostView.swift in Sources */,
 				4B8CD71A2ABBDDB50046C967 /* ContentView.swift in Sources */,
+				4B65133B2AC368490003A314 /* SearchViewModel.swift in Sources */,
 				4B74139A2AC21BE5002333CA /* ProfileHeaderView.swift in Sources */,
 				4B8CD7182ABBDDB50046C967 /* InstagramCloneApp.swift in Sources */,
 				4B7413872AC1FBA9002333CA /* IGTextButtonModifier.swift in Sources */,
