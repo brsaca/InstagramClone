@@ -22,11 +22,6 @@ struct ProfileHeaderView: View {
             /// pic and stats
             HStack {
                 UserImage(user: user, size: ProfileImageSize.xLarge)
-               /* Image(user?.profileImageUrl ?? "default")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle()) */
                 
                 Spacer()
                 
@@ -74,6 +69,7 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView(user: User.MOCK_USERS[0], size: ProfileImageSize.small)
+        ProfileHeaderView(user: User.MOCK_USERS[0], size: ProfileImageSize.small
+        )
     }
 }
