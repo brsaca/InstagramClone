@@ -7,36 +7,67 @@
 
 import SwiftUI
 
+enum Section {
+    case feed
+    case search
+    case uploadPost
+    case notifications
+    case profile
+}
+
 struct MainTabView: View {
+    /// Properties
+    @State private var selectedIndex = Section.feed
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedIndex) {
             FeedView()
+                .onAppear {
+                    selectedIndex = Section.feed
+                }
                 .tabItem {
                     Image(systemName: "house")
                 }
+                .tag(Section.feed)
             
             SearchView()
+                .onAppear {
+                    selectedIndex = Section.search
+                }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
+                .tag(Section.search)
             
             
-            Text("Upload Post")
+            UploadPostView(tabIndex: $selectedIndex)
+                .onAppear {
+                    selectedIndex = Section.uploadPost
+                }
                 .tabItem {
                     Image(systemName: "plus.square")
                 }
+                .tag(Section.uploadPost)
             
             
             Text("Notifications")
+                .onAppear {
+                    selectedIndex = Section.notifications
+                }
                 .tabItem {
                     Image(systemName: "heart")
                 }
+                .tag(Section.notifications)
             
             
             CurrentUserProfileView()
+                .onAppear {
+                    selectedIndex = Section.profile
+                }
                 .tabItem {
                     Image(systemName: "person")
                 }
+                .tag(Section.profile)
         }
         .accentColor(.black)
     }

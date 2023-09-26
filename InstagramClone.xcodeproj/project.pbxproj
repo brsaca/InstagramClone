@@ -26,6 +26,8 @@
 		4B7413942AC21232002333CA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7413932AC21232002333CA /* Post.swift */; };
 		4B7413972AC217E2002333CA /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7413962AC217E2002333CA /* PostGridView.swift */; };
 		4B74139A2AC21BE5002333CA /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7413992AC21BE5002333CA /* ProfileHeaderView.swift */; };
+		4B74139D2AC21E62002333CA /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74139C2AC21E62002333CA /* UploadPostView.swift */; };
+		4B7413A02AC251CF002333CA /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74139F2AC251CF002333CA /* UploadViewModel.swift */; };
 		4B8CD7182ABBDDB50046C967 /* InstagramCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CD7172ABBDDB50046C967 /* InstagramCloneApp.swift */; };
 		4B8CD71A2ABBDDB50046C967 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CD7192ABBDDB50046C967 /* ContentView.swift */; };
 		4B8CD71C2ABBDDB70046C967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CD71B2ABBDDB70046C967 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		4B7413932AC21232002333CA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4B7413962AC217E2002333CA /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		4B7413992AC21BE5002333CA /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		4B74139C2AC21E62002333CA /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
+		4B74139F2AC251CF002333CA /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
 		4B8CD7142ABBDDB50046C967 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8CD7172ABBDDB50046C967 /* InstagramCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneApp.swift; sourceTree = "<group>"; };
 		4B8CD7192ABBDDB50046C967 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		4B1B82412ABCBE35005EF033 /* UploadPost */ = {
 			isa = PBXGroup;
 			children = (
+				4B74139B2AC21E52002333CA /* View */,
+				4B74139E2AC251B3002333CA /* ViewModel */,
 			);
 			path = UploadPost;
 			sourceTree = "<group>";
@@ -237,6 +243,22 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		4B74139B2AC21E52002333CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B74139C2AC21E62002333CA /* UploadPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B74139E2AC251B3002333CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B74139F2AC251CF002333CA /* UploadViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4B8CD70B2ABBDDB50046C967 = {
 			isa = PBXGroup;
 			children = (
@@ -349,12 +371,14 @@
 				4B1B82552ABCCD1D005EF033 /* FeedCell.swift in Sources */,
 				4B7413812AC1F825002333CA /* CreateUsernameView.swift in Sources */,
 				4B1B824D2ABCBFED005EF033 /* ProfileView.swift in Sources */,
+				4B74139D2AC21E62002333CA /* UploadPostView.swift in Sources */,
 				4B8CD71A2ABBDDB50046C967 /* ContentView.swift in Sources */,
 				4B74139A2AC21BE5002333CA /* ProfileHeaderView.swift in Sources */,
 				4B8CD7182ABBDDB50046C967 /* InstagramCloneApp.swift in Sources */,
 				4B7413872AC1FBA9002333CA /* IGTextButtonModifier.swift in Sources */,
 				4B74137F2AC1F6B2002333CA /* IGTextFieldModifier.swift in Sources */,
 				4B7413892AC200C8002333CA /* User.swift in Sources */,
+				4B7413A02AC251CF002333CA /* UploadViewModel.swift in Sources */,
 				4B7413972AC217E2002333CA /* PostGridView.swift in Sources */,
 				4B1B82582ABCD2A9005EF033 /* SearchView.swift in Sources */,
 				4B1B82502ABCC531005EF033 /* UserStatView.swift in Sources */,
