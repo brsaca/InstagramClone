@@ -40,6 +40,7 @@ class AuthService {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
+            await uploadUserData(uid: userSession!.uid, username: username, email: email)
         } catch {
             print("DEBUG: AuthService Failed to create user with error: \(error.localizedDescription)")
         }
@@ -51,7 +52,13 @@ class AuthService {
         /// removes session locally and updates routing
         self.userSession = nil
         /// set currentUser to nil
+    }
     
+    @MainActor
+    private func uploadUserData(uid: String, username: String, email: String) async {
+        let user = User(id: uid, username: username, email: email)
+        guard let userData = try? Firestore.Encoder().encode(user) else { return }
+        try? await Firestore.firestore().collection("users").document(uid).setData(userData)
     }
 }
 
