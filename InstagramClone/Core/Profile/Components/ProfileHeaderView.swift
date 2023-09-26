@@ -11,11 +11,7 @@ struct ProfileHeaderView: View {
     /// Properties
     let user: User?
     let size: ProfileImageSize
-    
-    init(user: User?, size: ProfileImageSize) {
-        self.user = user
-        self.size = size
-    }
+    @Binding var showEditProfile: Bool
     
     var body: some View {
         VStack(spacing: 10){
@@ -50,7 +46,7 @@ struct ProfileHeaderView: View {
                 /// action button
                 Button {
                     if user.isCurrentUser {
-                        
+                        showEditProfile.toggle()
                     } else {
                         
                     }
@@ -76,7 +72,7 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView(user: User.MOCK_USERS[0], size: ProfileImageSize.small
+        ProfileHeaderView(user: User.MOCK_USERS[0], size: ProfileImageSize.small, showEditProfile: .constant(false)
         )
     }
 }

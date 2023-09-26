@@ -15,6 +15,8 @@ struct CurrentUserProfileView: View {
         return viewModel.currentUser
     }
     
+    @State var showEditProfile = false
+    
     var posts: [Post] {
         return Post.MOCK_POSTS.filter({$0.user?.username == currentUser?.username})
     }
@@ -23,7 +25,7 @@ struct CurrentUserProfileView: View {
         NavigationStack {
             ScrollView {
                 /// header
-                ProfileHeaderView(user: currentUser, size: ProfileImageSize.xLarge)
+                ProfileHeaderView(user: currentUser, size: ProfileImageSize.xLarge, showEditProfile: $showEditProfile)
                 
                 /// posts grid view
                 PostGridView(posts: posts)
@@ -38,6 +40,11 @@ struct CurrentUserProfileView: View {
                         Image(systemName: "rectangle.portrait.and.arrow.forward")
                             .foregroundColor(.black)
                     }
+                }
+            }
+            .sheet(isPresented: $showEditProfile) {
+                if let user = currentUser {
+                    EditProfileView(user: user)
                 }
             }
         }

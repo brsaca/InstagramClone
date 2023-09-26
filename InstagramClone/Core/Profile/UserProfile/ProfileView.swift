@@ -18,7 +18,7 @@ struct ProfileView: View {
     var body: some View {
         ScrollView {
             /// header
-            ProfileHeaderView(user: user, size: ProfileImageSize.small)
+            ProfileHeaderView(user: user, size: ProfileImageSize.small, showEditProfile: .constant(false))
             
             /// posts grid view
             PostGridView(posts: posts)
