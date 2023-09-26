@@ -33,6 +33,8 @@
 		4B8CD71C2ABBDDB70046C967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CD71B2ABBDDB70046C967 /* Assets.xcassets */; };
 		4B8CD71F2ABBDDB70046C967 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CD71E2ABBDDB70046C967 /* Preview Assets.xcassets */; };
 		4BB718F02AC26045008F44B1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB718EF2AC26045008F44B1 /* Kingfisher */; };
+		4BC0C3482AC26F690048B2FC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C3472AC26F690048B2FC /* AuthService.swift */; };
+		4BC0C34C2AC270740048B2FC /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C34B2AC270740048B2FC /* ContentViewModel.swift */; };
 		4BD57FBA2AC25C4C006FDE4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BD57FB92AC25C4C006FDE4C /* GoogleService-Info.plist */; };
 		4BF659592AC26B510023B7B5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4BF659582AC26B510023B7B5 /* FirebaseAuth */; };
 		4BF6595B2AC26B510023B7B5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4BF6595A2AC26B510023B7B5 /* FirebaseFirestore */; };
@@ -67,6 +69,8 @@
 		4B8CD7192ABBDDB50046C967 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B8CD71B2ABBDDB70046C967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B8CD71E2ABBDDB70046C967 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4BC0C3472AC26F690048B2FC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4BC0C34B2AC270740048B2FC /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4BD57FB92AC25C4C006FDE4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +164,8 @@
 		4B1B82442ABCBE4B005EF033 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				4BC0C3492AC270580048B2FC /* View */,
+				4BC0C34A2AC2705D0048B2FC /* ViewModel */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 		4B1B82472ABCBE65005EF033 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				4BC0C3462AC26F500048B2FC /* Service */,
 				4B7413792AC1E739002333CA /* View */,
 			);
 			path = Authentication;
@@ -295,7 +302,6 @@
 				4B1B823E2ABCBE16005EF033 /* Extensions */,
 				4B1B823F2ABCBE21005EF033 /* Model */,
 				4B1B82402ABCBE29005EF033 /* Services */,
-				4B8CD7192ABBDDB50046C967 /* ContentView.swift */,
 				4B8CD71B2ABBDDB70046C967 /* Assets.xcassets */,
 				4BD57FB92AC25C4C006FDE4C /* GoogleService-Info.plist */,
 				4B8CD71D2ABBDDB70046C967 /* Preview Content */,
@@ -309,6 +315,30 @@
 				4B8CD71E2ABBDDB70046C967 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4BC0C3462AC26F500048B2FC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4BC0C3472AC26F690048B2FC /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4BC0C3492AC270580048B2FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B8CD7192ABBDDB50046C967 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BC0C34A2AC2705D0048B2FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BC0C34B2AC270740048B2FC /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,12 +432,14 @@
 				4B8CD7182ABBDDB50046C967 /* InstagramCloneApp.swift in Sources */,
 				4B7413872AC1FBA9002333CA /* IGTextButtonModifier.swift in Sources */,
 				4B74137F2AC1F6B2002333CA /* IGTextFieldModifier.swift in Sources */,
+				4BC0C34C2AC270740048B2FC /* ContentViewModel.swift in Sources */,
 				4B7413892AC200C8002333CA /* User.swift in Sources */,
 				4B7413A02AC251CF002333CA /* UploadViewModel.swift in Sources */,
 				4B7413972AC217E2002333CA /* PostGridView.swift in Sources */,
 				4B1B82582ABCD2A9005EF033 /* SearchView.swift in Sources */,
 				4B1B82502ABCC531005EF033 /* UserStatView.swift in Sources */,
 				4B7413832AC1F9E1002333CA /* CreatePassword.swift in Sources */,
+				4BC0C3482AC26F690048B2FC /* AuthService.swift in Sources */,
 				4B74137D2AC1F384002333CA /* AddEmailView.swift in Sources */,
 				4B7413852AC1FB45002333CA /* CompleteSignUpView.swift in Sources */,
 				4B1B82532ABCC882005EF033 /* FeedView.swift in Sources */,
