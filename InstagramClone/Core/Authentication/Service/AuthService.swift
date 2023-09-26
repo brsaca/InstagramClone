@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 class AuthService {
     
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     static let shared = AuthService()
     
@@ -26,6 +27,7 @@ class AuthService {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            try await UserService.shared.fetchCurrentUser()
         } catch {
             print("DEBUG: AuthService Failed to login with error: \(error.localizedDescription)")
         }
@@ -52,6 +54,7 @@ class AuthService {
         /// removes session locally and updates routing
         self.userSession = nil
         /// set currentUser to nil
+        UserService.shared.reset()
     }
     
     @MainActor
@@ -59,6 +62,7 @@ class AuthService {
         let user = User(id: uid, username: username, email: email)
         guard let userData = try? Firestore.Encoder().encode(user) else { return }
         try? await Firestore.firestore().collection("users").document(uid).setData(userData)
+        UserService.shared.currentUser = user
     }
 }
 

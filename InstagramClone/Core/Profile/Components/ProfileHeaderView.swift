@@ -9,17 +9,24 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     /// Properties
-    let user: User
+    let user: User?
+    let size: ProfileImageSize
+    
+    init(user: User?, size: ProfileImageSize) {
+        self.user = user
+        self.size = size
+    }
     
     var body: some View {
         VStack(spacing: 10){
             /// pic and stats
             HStack {
-                Image(user.profileImageUrl ?? "")
+                UserImage(user: user, size: ProfileImageSize.xLarge)
+               /* Image(user?.profileImageUrl ?? "default")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 80)
-                    .clipShape(Circle())
+                    .clipShape(Circle()) */
                 
                 Spacer()
                 
@@ -35,10 +42,10 @@ struct ProfileHeaderView: View {
             
             /// name and bio
             VStack(alignment: .leading, spacing: 4) {
-                Text(user.fullname ?? "")
+                Text(user?.fullname ?? "")
                     .fontWeight(.semibold)
                 
-                Text(user.bio ?? "")
+                Text(user?.bio ?? "")
             }
             .font(.footnote)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -67,6 +74,6 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView(user: User.MOCK_USERS[0])
+        ProfileHeaderView(user: User.MOCK_USERS[0], size: ProfileImageSize.small)
     }
 }

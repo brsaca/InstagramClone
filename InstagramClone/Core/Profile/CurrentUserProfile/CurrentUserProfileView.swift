@@ -9,19 +9,21 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     /// Properties
-    private var currentUser: User {
-        return User.MOCK_USERS[0]
+    @StateObject private var viewModel = CurrentUserProfileViewModel()
+    
+    private var currentUser: User? {
+        return viewModel.currentUser
     }
     
     var posts: [Post] {
-        return Post.MOCK_POSTS.filter({$0.user?.username == currentUser.username})
+        return Post.MOCK_POSTS.filter({$0.user?.username == currentUser?.username})
     }
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 /// header
-                ProfileHeaderView(user: currentUser)
+                ProfileHeaderView(user: currentUser, size: ProfileImageSize.xLarge)
                 
                 /// posts grid view
                 PostGridView(posts: posts)
@@ -31,7 +33,7 @@ struct CurrentUserProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        AuthService.shared.signOut()
+                        viewModel.logout()
                     } label: {
                         Image(systemName: "rectangle.portrait.and.arrow.forward")
                             .foregroundColor(.black)

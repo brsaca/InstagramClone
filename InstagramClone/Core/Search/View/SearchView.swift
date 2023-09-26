@@ -18,7 +18,7 @@ struct SearchView: View {
                     ForEach(User.MOCK_USERS) { user in
                         NavigationLink(value: user) {
                             HStack {
-                                UserImage(user: user)
+                                UserImage(user: user, size: ProfileImageSize.small)
                                 
                                 VStack(alignment: .leading){
                                     Text(user.username)

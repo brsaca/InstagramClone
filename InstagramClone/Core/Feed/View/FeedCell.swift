@@ -15,7 +15,7 @@ struct FeedCell: View {
         VStack(spacing: 10) {
             /// image + username
             HStack(spacing: 4) {
-                UserImage(user: post.user)
+                UserImage(user: post.user, size: ProfileImageSize.small)
                 
                 Text(post.user?.username ?? "")
                     .font(.footnote)
