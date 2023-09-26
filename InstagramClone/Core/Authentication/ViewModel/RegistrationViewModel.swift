@@ -19,5 +19,8 @@ class RegistrationViewModel: ObservableObject {
                     password: password,
                     username: username
         )
+        email = ""
+        password = ""
+        username = ""
     }
 }
