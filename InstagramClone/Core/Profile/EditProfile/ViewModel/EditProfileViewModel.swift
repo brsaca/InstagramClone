@@ -10,6 +10,7 @@ import Combine
 import PhotosUI
 import SwiftUI
 
+@MainActor
 class EditProfileViewModel: ObservableObject {
     @Published var selectedItem: PhotosPickerItem? {
         didSet { Task{ await loadImage() } }
@@ -17,14 +18,21 @@ class EditProfileViewModel: ObservableObject {
     @Published var profileImage: Image?
     @Published var bio: String = String()
     @Published var fullname: String = String()
+    
+    init() {
+        self.bio = UserService.shared.currentUser?.bio ?? ""
+        self.fullname = UserService.shared.currentUser?.fullname ?? ""
+    }
+    
     private var uiImage: UIImage?
     
     func updateUserData() async throws {
-        Task { try await updateProfileImage() }
-        Task { try await updateProfileInfo() }
+        Task {
+            try await updateProfileImage()
+            try await updateProfileInfo()
+        }
     }
     
-    @MainActor
     private func loadImage() async {
         guard let item = selectedItem else { return }
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
