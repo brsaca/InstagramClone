@@ -1,12 +1,12 @@
 # InstagramClone - SwiftUI with Firebase 👋
 
-A clone app for Instagram using swiftUI and firebase [Build Instagram With an Ex-Meta Engineer | SwiftUI + Firebase]([https://www.youtube.com/watch?v=7UKUCZuaVlA))
+A clone app for Instagram using swiftUI and firebase [Build Instagram With an Ex-Meta Engineer | SwiftUI + Firebase](https://www.youtube.com/watch?v=7UKUCZuaVlA)
 <p align="center">
 <a href="#">
 <img src="images/instagram_demo.gif" align="center" width=35%>
 </a> 
 <br><br>
-     ExpenseTracketApp
+     Instagram Clone with Firebase
     <br><br>
   <a href="#">
     <img alt="version" src="https://img.shields.io/badge/Version-v1.0-red.svg" />
