@@ -39,7 +39,6 @@ struct MainTabView: View {
                 }
                 .tag(Section.search)
             
-            
             UploadPostView(tabIndex: $selectedIndex)
                 .onAppear {
                     selectedIndex = Section.uploadPost
@@ -48,7 +47,6 @@ struct MainTabView: View {
                     Image(systemName: "plus.square")
                 }
                 .tag(Section.uploadPost)
-            
             
             Text("Notifications")
                 .onAppear {
