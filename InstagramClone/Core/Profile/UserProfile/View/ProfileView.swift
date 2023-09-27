@@ -21,7 +21,7 @@ struct ProfileView: View {
             ProfileHeaderView(user: user, size: ProfileImageSize.small, showEditProfile: .constant(false))
             
             /// posts grid view
-            PostGridView(posts: posts)
+            PostGridView(user: user)
         }
     }
 }

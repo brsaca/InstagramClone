@@ -47,6 +47,7 @@
 		4BCCE4A12AC3A06E004747C9 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCCE4A02AC3A06E004747C9 /* PostsService.swift */; };
 		4BCCE4A32AC3A184004747C9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCCE4A22AC3A184004747C9 /* Timestamp.swift */; };
 		4BCCE4A62AC3BF43004747C9 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCCE4A52AC3BF43004747C9 /* FeedViewModel.swift */; };
+		4BCCE4AE2AC484BA004747C9 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCCE4AD2AC484BA004747C9 /* PostGridViewModel.swift */; };
 		4BD57FBA2AC25C4C006FDE4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BD57FB92AC25C4C006FDE4C /* GoogleService-Info.plist */; };
 		4BF659592AC26B510023B7B5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4BF659582AC26B510023B7B5 /* FirebaseAuth */; };
 		4BF6595B2AC26B510023B7B5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4BF6595A2AC26B510023B7B5 /* FirebaseFirestore */; };
@@ -95,6 +96,7 @@
 		4BCCE4A02AC3A06E004747C9 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		4BCCE4A22AC3A184004747C9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		4BCCE4A52AC3BF43004747C9 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		4BCCE4AD2AC484BA004747C9 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
 		4BD57FB92AC25C4C006FDE4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,7 +234,7 @@
 		4B1B824A2ABCBFD6005EF033 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B824C2ABCBFED005EF033 /* ProfileView.swift */,
+				4BCCE4A72AC483D3004747C9 /* View */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -240,11 +242,8 @@
 		4B1B824E2ABCC50D005EF033 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4B7413862AC1FBA9002333CA /* IGTextButtonModifier.swift */,
-				4B74137E2AC1F6B2002333CA /* IGTextFieldModifier.swift */,
-				4B7413962AC217E2002333CA /* PostGridView.swift */,
-				4B1B824F2ABCC531005EF033 /* UserStatView.swift */,
-				4B1B82592ABCD56B005EF033 /* UserImage.swift */,
+				4BCCE4AB2AC48477004747C9 /* View */,
+				4BCCE4AC2AC48483004747C9 /* ViewModel */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,6 +268,7 @@
 		4B6513352AC35F070003A314 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4B7413912AC20FDF002333CA /* CurrentUserProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				4B6513352AC35F070003A314 /* View */,
-				4B7413912AC20FDF002333CA /* CurrentUserProfileView.swift */,
 				4B6513362AC35F0D0003A314 /* ViewModel */,
 			);
 			path = CurrentUserProfile;
@@ -441,6 +440,34 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4BCCE4A72AC483D3004747C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B1B824C2ABCBFED005EF033 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BCCE4AB2AC48477004747C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B7413862AC1FBA9002333CA /* IGTextButtonModifier.swift */,
+				4B74137E2AC1F6B2002333CA /* IGTextFieldModifier.swift */,
+				4B7413962AC217E2002333CA /* PostGridView.swift */,
+				4B1B824F2ABCC531005EF033 /* UserStatView.swift */,
+				4B1B82592ABCD56B005EF033 /* UserImage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BCCE4AC2AC48483004747C9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BCCE4AD2AC484BA004747C9 /* PostGridViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -547,6 +574,7 @@
 				4B7413972AC217E2002333CA /* PostGridView.swift in Sources */,
 				4B1B82582ABCD2A9005EF033 /* SearchView.swift in Sources */,
 				4B1B82502ABCC531005EF033 /* UserStatView.swift in Sources */,
+				4BCCE4AE2AC484BA004747C9 /* PostGridViewModel.swift in Sources */,
 				4B7413832AC1F9E1002333CA /* CreatePassword.swift in Sources */,
 				4BCCE4982AC38C53004747C9 /* EditProfileView.swift in Sources */,
 				4BC0C3482AC26F690048B2FC /* AuthService.swift in Sources */,

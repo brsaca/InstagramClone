@@ -28,7 +28,9 @@ struct CurrentUserProfileView: View {
                 ProfileHeaderView(user: currentUser, size: ProfileImageSize.xLarge, showEditProfile: $showEditProfile)
                 
                 /// posts grid view
-                PostGridView(posts: posts)
+                if let user = currentUser {
+                    PostGridView(user: user)
+                }
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
