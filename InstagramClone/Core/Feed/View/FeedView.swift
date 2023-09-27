@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct FeedView: View {
+    /// properties
+    @StateObject private var viewModel = FeedViewModel()
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 32) {
-                    ForEach(Post.MOCK_POSTS){ post in
+                    ForEach(viewModel.posts){ post in
                         FeedCell(post: post)
                     }
                 }
+            }
+            .refreshable {
+                do {
+                    // Sleep for 2 seconds
+                    try await Task.sleep(nanoseconds: 2 * 1_000_000_000)
+                    Task{ try await viewModel.fetchPosts() }
+                } catch {}
             }
             .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)

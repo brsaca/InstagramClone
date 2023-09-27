@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeedCell: View {
     /// Properties
@@ -26,7 +27,7 @@ struct FeedCell: View {
             .padding(.leading)
             
             /// post image
-            Image(post.imageUrl)
+            KFImage(URL(string: post.imageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(height: 400)
@@ -73,7 +74,7 @@ struct FeedCell: View {
             HStack{
                 Text(post.user?.username ?? "")
                     .fontWeight(.semibold) +
-                Text(post.caption)
+                Text(" \(post.caption)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.footnote)
@@ -81,7 +82,7 @@ struct FeedCell: View {
             .padding(.top, 1)
             
             /// time
-            Text("2d ago")
+            Text(post.timestamp.timestampString())
                 .font(.footnote)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
